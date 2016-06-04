@@ -1,0 +1,25 @@
+{
+  "name": "request_header_parser_microservice",
+  "version": "1.0.0",
+  "description": "This is an excercise as part of fcc curriculum to understand useragents and there use",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+     "express": "4.13.4",
+     "ua-parser-js":"0.6.0",
+     "accept-language":"2.0.16",
+     "ip":"1.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnrs96/Request_Header_Parser_Microservice.git"
+  },
+  "author": "Aditya Bansal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnrs96/Request_Header_Parser_Microservice/issues"
+  },
+  "homepage": "https://github.com/adnrs96/Request_Header_Parser_Microservice#readme"
+}
