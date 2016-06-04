@@ -10,7 +10,9 @@ app.use('/whoami',function(req,res){
 	var ua = req.headers['user-agent'];
 	var os = parser.setUA(ua).getOS()["name"];
 	var language = acceptLanguage.parse(req.headers["accept-language"])[0].value;
-	res.json(ip.address());
+	var ip = ip.address();
+	var rhpm = {"ipaddress":ip,"language":language,"software":os};
+	res.json(rhpm);
 });
 app.use('/',function(req,res){
 	res.sendFile(__dirname+'/index.html');
