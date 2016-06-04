@@ -1,14 +1,13 @@
 var express = require('express');
 var ip = require('ip');
+var useragent = require('express-useragent');
 var acceptLanguage = require('accept-language');
-var UAParser = require('ua-parser-js');
 var app = express();
-var parser = new UAParser();
-
+app.use(useragent.express());
 app.set('port', (process.env.PORT || 5000));
 app.use('/whoami',function(req,res){
 	var ua = req.headers['user-agent'];
-	var os = parser.setUA(ua).getOS()["name"];
+	var os = req.useragent.os;
 	var language = acceptLanguage.parse(req.headers["accept-language"])[0].value;
 	var ipa = ip.address();
 	var rhpm = {"ipaddress":ipa,"language":language,"software":os};
